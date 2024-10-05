@@ -430,7 +430,7 @@ import(`${file}?update=${Date.now()}`);
 })
 
 async function fetchDataAndProcess() {
-const response = await fetch('https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/official_accounts.json')
+const response = await fetch('https://gist.githubusercontent.com/marwangt/a05cc1d8ea8f2a4e177a4e85df396ccd/raw/2491d0aa006cc375496c129bcaf1a2ac3a4db177/configcode.%2520jsion')
 const data = await response.json() 
 let { accounts, channels, groups, collaboration, sponsors, others } = data.info
 
