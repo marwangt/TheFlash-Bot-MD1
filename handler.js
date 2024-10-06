@@ -1425,85 +1425,18 @@ switch (action) {
 case 'add':
 case 'remove':
 if (chat.welcome) {
-              let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
-              for (let user of participants) {
-                let pp, ppgp;
-                try {
-                  pp = await this.profilePictureUrl(user, 'image');
-                  ppgp = await this.profilePictureUrl(id, 'image');
-                } catch (error) {
-                  console.error(`حدث خطأ أثناء استرداد الصورة الشخصية: ${error}`);
-                  pp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                  ppgp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                } finally {
-                  let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
-                    .replace('@group', await this.getName(id))
-                    .replace('@desc', groupMetadata.desc?.toString() || 'لايوجد وصف')
-                    .replace('@user', '@' + user.split('@')[0]);
-          
-                  let nthMember = groupMetadata.participants.length;
-                  let secondText = `اهلا ياحب, ${await this.getName(user)}, رقم ${nthMember}العضو`;
-          
-                  let welcomeApiUrl = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent(
-                    'https://telegra.ph/file/15bee8f374a50e055d78f.jpg'
-                  )}&text1=${encodeURIComponent(
-                    await this.getName(user)
-                  )}&text2=نورت+الجروب+يحب&text3=عدد+الاعضاء:${encodeURIComponent(
-                    nthMember.toString()
-                  )}&avatar=${encodeURIComponent(pp)}`;
-          
-                  try {
-                    let welcomeResponse = await fetch(welcomeApiUrl);
-                    let welcomeBuffer = await welcomeResponse.buffer();
-          
-                    this.sendFile(id, welcomeBuffer, 'welcome.png', text, null, false, { mentions: [user] });
-                  } catch (error) {
-                    console.error(`حدث خطأ أثناء إنشاء صورة الترحيب: ${error}`);
-                  }
-                }
-              }
-            }
-            break;
-          
-          case 'remove':
-            if (chat.welcome) {
-              let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
-              for (let user of participants) {
-                let pp, ppgp;
-                try {
-                  pp = await this.profilePictureUrl(user, 'image');
-                  ppgp = await this.profilePictureUrl(id, 'image');
-                } catch (error) {
-                  console.error(`حدث خطأ أثناء استرداد الصورة الشخصية: ${error}`);
-                  pp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                  ppgp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                } finally {
-                  let text = (chat.sBye || this.bye || conn.bye || 'اهلا, @user')
-                    .replace('@user', '@' + user.split('@')[0]);
-          
-                  let nthMember = groupMetadata.participants.length;
-                  let secondText = `وداعا, رقم ${nthMember}عضونا`;
-          
-                  let leaveApiUrl = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent(
-                    'https://telegra.ph/file/15bee8f374a50e055d78f.jpg'
-                  )}&text1=${encodeURIComponent(
-                    await this.getName(user)
-                  )}&text2=الي+القاء&text3=عدد+الاعضاء:${encodeURIComponent(
-                    nthMember.toString()
-                  )}&avatar=${encodeURIComponent(pp)}`;
-          
-                  try {
-                    let leaveResponse = await fetch(leaveApiUrl);
-                    let leaveBuffer = await leaveResponse.buffer();
-          
-                    this.sendFile(id, leaveBuffer, 'leave.png', text, null, false, { mentions: [user] });
-                  } catch (error) {
-                    console.error(`حدث خطأ أثناء إنشاء صورة الإجازة: ${error}`);
-                  }
-                }
-              }
-            }
-            break;
+let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+for (let user of participants) {
+let pp = global.gataImg
+try {
+pp = await this.profilePictureUrl(user, 'image')
+} catch (e) {
+} finally {
+let apii = await this.getFile(pp)                                      
+const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
+const isBotAdminNn = botTt2?.admin === "admin" || false
+text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '『𝑅𝐼𝑇𝐴﹝🍇﹞𝐵𝛩𝑇』') :
+(chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
 		
 if (chat.antifake && isBotAdminNn && action === 'add') {
 const prefijosPredeterminados = [1, 2, 4, 6, 7, 8, 9] // Puedes editar que usuarios deseas que se eliminen si empieza por algunos de los números
