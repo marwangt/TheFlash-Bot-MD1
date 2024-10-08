@@ -1400,8 +1400,8 @@ if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
 //if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 	    
-if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify)/gi)) {
-let emot = pickRandom(["😀", "😃", "😄", "😁", "😆", "🥹", "😅", "😂", "🤣", "🥲", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🥸", "🤩", "🥳", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😶‍🌫️", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🫣", "🤭", "🫢", "🫡", "🤫", "🫠", "🤥", "😶", "🫥", "😐", "🫤", "😑", "🫨", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😮‍💨", "😵", "😵‍💫", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👺", "🤡", "💩", "👻", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🫶", "👍", "✌️", "🙏", "🫵", "🤏", "🤌", "☝️", "🖕", "🙏", "🫵", "🫂", "🐱", "🤹‍♀️", "🤹‍♂️", "🗿", "✨", "⚡", "🔥", "🌈", "🩷", "❤️", "🧡", "💛", "💚", "🩵", "💙", "💜", "🖤", "🩶", "🤍", "🤎", "💔", "❤️‍🔥", "❤️‍🩹", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "🏳️‍🌈", "👊", "👀", "💋", "🫰", "💅", "👑", "🐣", "🐤", "🐈"])
+if (db.data.chats[m.chat].reaction && m.text.match(/(اوكيجي|المطور|212657035661|مروان|تست|هلا|مرحبا|السلام عليكم|حب|يا|حلو|احبك|بودرار|اه)/لا)) {
+let emot = pickRandom(["🍒", "✨", "🌚", "🍀", "🍇", "🍉", "🍓", "🩵", "💙", "💜", "💚", "🤍", "🌸", "🫐",])
 if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 }
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
@@ -1425,93 +1425,18 @@ switch (action) {
 case 'add':
 case 'remove':
 if (chat.welcome) {
-                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                for (let user of participants) {
-                    let pp = 'https://telegra.ph/file/3694d5edde3846459647b.jpg'
-                    let ppgp = 'https://telegra.ph/file/3694d5edde3846459647b.jpg'
-                    try {
-                        pp = await this.profilePictureUrl(user, 'image')
-                        ppgp = await this.profilePictureUrl(id, 'image')
-                        } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'Desconocido') :
-                            (chat.sBye || this.bye || conn.bye || 'HELLO, @user')).replace('@user', '@' + user.split('@')[0])
-                         
-                            let wel = API('fgmods', '/api/welcome', {
-                                username: await this.getName(user),
-                                groupname: await this.getName(id),
-                                groupicon: ppgp,
-                                membercount: groupMetadata.participants.length,
-                                profile: pp,
-                                background: 'https://telegra.ph/file/3694d5edde3846459647b.jpg'
-                            }, 'apikey')
-
-                            let lea = API('fgmods', '/api/goodbye', {
-                                username: await this.getName(user),
-                                groupname: await this.getName(id),
-                                groupicon: ppgp,
-                                membercount: groupMetadata.participants.length,
-                                profile: pp,
-                                background: 'https://telegra.ph/file/3694d5edde3846459647b.jpg'
-                            }, 'apikey')
-                            this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-
-                    }
-                }
-            }
-            break
-        case 'promote':
-        case 'promover':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
-        case 'demote':
-        case 'degradar':
-            if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador')
-            text = text.replace('@user', '@' + participants[0].split('@')[0])
-            if (chat.detect)
-                this.sendMessage(id, { text, mentions: this.parseMention(text) })
-            break
-    }
-					}
-          
-          case 'remove':
-            if (chat.welcome) {
-              let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
-              for (let user of participants) {
-                let pp, ppgp;
-                try {
-                  pp = await this.profilePictureUrl(user, 'image');
-                  ppgp = await this.profilePictureUrl(id, 'image');
-                } catch (error) {
-                  console.error(`حدث خطأ أثناء استرداد الصورة الشخصية: ${error}`);
-                  pp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                  ppgp = 'https://telegra.ph/file/c9964b48f992e08539627.jpg'; // Assign default image URL
-                } finally {
-                  let text = (chat.sBye || this.bye || conn.bye || 'اهلا, @user')
-                    .replace('@user', '@' + user.split('@')[0]);
-          
-                  let nthMember = groupMetadata.participants.length;
-                  let secondText = `وداعا, رقم ${nthMember}عضونا`;
-          
-                  let leaveApiUrl = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent(
-                    'https://telegra.ph/file/15bee8f374a50e055d78f.jpg'
-                  )}&text1=${encodeURIComponent(
-                    await this.getName(user)
-                  )}&text2=الي+القاء&text3=عدد+الاعضاء:${encodeURIComponent(
-                    nthMember.toString()
-                  )}&avatar=${encodeURIComponent(pp)}`;
-          
-                  try {
-                    let leaveResponse = await fetch(leaveApiUrl);
-                    let leaveBuffer = await leaveResponse.buffer();
-          
-                    this.sendFile(id, leaveBuffer, 'leave.png', text, null, false, { mentions: [user] });
-                  } catch (error) {
-                    console.error(`حدث خطأ أثناء إنشاء صورة الإجازة: ${error}`);
-                  }
-                }
-              }
-            }
-            break;
+let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+for (let user of participants) {
+let pp = global.gataImg
+try {
+pp = await this.profilePictureUrl(user, 'image')
+} catch (e) {
+} finally {
+let apii = await this.getFile(pp)                                      
+const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
+const isBotAdminNn = botTt2?.admin === "admin" || false
+text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '『𝑅𝐼𝑇𝐴﹝🍇﹞𝐵𝛩𝑇』') :
+(chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
 		
 if (chat.antifake && isBotAdminNn && action === 'add') {
 const prefijosPredeterminados = [1, 2, 4, 6, 7, 8, 9] // Puedes editar que usuarios deseas que se eliminen si empieza por algunos de los números
@@ -1546,7 +1471,7 @@ mentionedJid:[user],
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
 "thumbnail": apii.data, 
-"title": [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
+"title": [wm, 'دعم 🫐 ' + gt + ' 🫐', '『𝑅𝐼𝑇𝐴﹝🍇﹞𝐵𝛩𝑇』'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
 sourceUrl: 'https://chat.whatsapp.com/GNp7n9WYak8JBanOEdWiGi' }}}, { quoted: fkontak2 })
