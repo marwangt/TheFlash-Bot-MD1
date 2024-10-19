@@ -28,18 +28,18 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   const zack = 'https://envs.sh/wHc.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
-conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `˼⚡˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
-> ˼🪪˹↜ مــعــلــومــاتــك ↶
-╮───────────────────⟢ـ
-┆⚡↜ بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
-┆⚜️↜ مـــســـتواك↞⌊ ${level} ⌉
-┆💫↜ رتـبـتـك↞⌊ ${role} ⌉
-┆🧰↜ الـخـبـرة↞⌊ ${exp} ⌉
-┆💎↜ الـمـاس↞⌊ ${limit} ⌉
-╯───────────────────⟢ـ
-> ˼🤖˹↜ الــبــوت↶
-╮───────────────────⟢ـ
-┆⚙️ ↜اسـم الـبـوت↶﹝𝐅𝐋𝐀𝐒𝐇﹞
+conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `*أهلا وسهلا بك/ي ☺️🍉* @${mentionId.split('@')[0]}
+*₪ ↵ معلوماتك [🔰]*
+*◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
+*₪┆البريميم ⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
+*₪┆المستوى ⌊ ${level} ⌉*
+*₪┆الرتبة ⌊ ${role} ⌉*
+*₪┆الخبرة ⌊ ${exp} ⌉*
+*₪┆الماس ⌊ ${limit} ⌉*
+*◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
+*₪ ↵ معلومات البوت [🔰]*
+*◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
+*₪┆المطور: 『𝑴𝑹﹝🫐﹞𝑨𝑶𝑲𝑰𝑱𝑰』
 ┆🪄 ↜الـمـطـور ↶﹝𝐅𝐋𝐀𝐒𝐇_𝐓𝐄𝐀𝐌﹞
 ┆📌 ↜الـتـشـغـيـل ↶﹝${uptime}﹞
 ┆🔖 ↜الــمــســتـخـدمـيـن ↶﹝${rtotalreg}﹞
