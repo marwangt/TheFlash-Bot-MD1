@@ -31,11 +31,11 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `أهلا وسهلابك/ي👋🏻 @${mentionId.split('@')[0]}
 *₪ ↵ معلوماتك [🔰]*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
-*₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉*
-*₪┆⊱∘ 🔝 مـــســـتواك↞⌊ ${level} ⌉*
-*₪┆⊱∘ 👨‍✈️ رتـبـتـك↞⌊ ${role} ⌉*
-*₪┆⊱∘ 🙆‍♀️ الـخـبـرة↞⌊ ${exp} ⌉*
-*₪┆⊱∘ 💎 الـمـاس↞⌊ ${limit} ⌉*
+₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
+₪┆⊱∘ 🔝 مـــســـتواك↞⌊ ${level} ⌉
+₪┆⊱∘ 👨‍✈️ رتـبـتـك↞⌊ ${role} ⌉
+₪┆⊱∘ 🙆‍♀️ الـخـبـرة↞⌊ ${exp} ⌉
+₪┆⊱∘ 💎 الـمـاس↞⌊ ${limit} ⌉
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
 *₪ ↵ معلومات البوت [🔰]*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
