@@ -31,7 +31,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `أهلا وسهلابك/ي👋🏻 @${mentionId.split('@')[0]}
 *₪ ↵ معلوماتك [🔰]*
 *◆━ ⊱∘┃﹝🍉﹞┃∘⊰ ━◆*
->  ₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
+>  ₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? '👑مميز' : (isPrems ? '👶مميز👑' : 'عادي') || ''} ⌉
 >  ₪┆⊱∘ 🔝 مـــســـتواك↞⌊ ${level} ⌉
 >  ₪┆⊱∘ 👨‍✈️ رتـبـتـك↞⌊ ${role} ⌉
 >  ₪┆⊱∘ 🙆‍♀️ الـخـبـرة↞⌊ ${exp} ⌉
@@ -44,7 +44,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 >  ₪┆⊱∘ 🔁 الـتـشـغـيـل ﹝${uptime}﹞
 >  ₪┆⊱∘ 👥 المستخدمين ﹝${rtotalreg}﹞
 *◆━ ⊱∘┃﹝🍉﹞┃∘⊰ ━◆*
-> © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "Araab Zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
+> 𝑉𝐸𝑅𝑺𝐼𝛩𝑁 𝑁𝐴𝑀𝐵𝐸𝑅 4`,subtitle: "Araab Zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
                     contextInfo: {
                         mentionedJid: [m.sender],
                         isForwarded: false,
@@ -70,25 +70,25 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                                     header: 'الــقـ👨🏻‍💻ـســم الــثــانــي',
                                                     title: 'استدعاء_قسم_المشرفين #المشرفين',
                                                     description: '',
-                                                    id: '.ق10'
+                                                    id: '.ق2'
                                                 },
                                                 {
                                                     header: 'الــقـ🕋ـســم الــثــالــث',
                                                     title: 'استدعاء_قسم_الدين #الدين',
                                                     description: '',
-                                                    id: '.ق2'
+                                                    id: '.ق3'
                                                 },
                                                 {
                                                     header: 'الــقـ👑ـســم الــرابــع',
                                                     title: 'استدعاء_قسم_المطور #المطور',
                                                     description: '',
-                                                    id: '.ق3'
+                                                    id: '.ق4'
                                                 },
                                                 {
                                                     header: 'الــقـ🛡ـســم الــخــامــس',
                                                     title: 'استدعاء_قسم_التنزيلات #التنزيلات',
                                                     description: '',
-                                                    id: '.ق4'
+                                                    id: '.ق6'
                                                 },
                                                 {
                                                     header: 'الــقـ🕹ـســم الــســادس',
@@ -100,19 +100,19 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                                     header: 'الــقـ🌀ـســم الــســابــع',
                                                     title: 'استدعاء_قسم_التحويلات #التحويلات',
                                                     description: '',
-                                                    id: '.ق6'
+                                                    id: '.ق7'
                                                 },
                                                 {
                                                     header: 'الــقـ🤖ـســم الــتــاســع',
                                                     title: 'استدعاء_قسم_الذكاء #الذكاء',
                                                     description: '',
-                                                    id: '.ق7'
+                                                    id: '.ق8'
                                                 },
                                                 {
                                                     header: 'الــقـ🚨ـســم الــعــاشــر',
                                                     title: 'استدعاء_قسم_الدعم #الدعم',
                                                     description: '',
-                                                    id: '.ق8'
+                                                    id: '.ق11'
                                                 },
                                                 {
                                                     header: 'الــقـ🔍ـســم �لــحــاديــة عــشــر',
