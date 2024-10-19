@@ -25,7 +25,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } })
-  const zack = 'https://envs.sh/wHc.jpg'
+  const zack = 'https://qu.ax/SRQJs.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `*أهلا وسهلا بك/ي ☺️🍉* @${mentionId.split('@')[0]}
@@ -39,11 +39,11 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
 *₪ ↵ معلومات البوت [🔰]*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
-*₪┆المطور: 『𝑴𝑹﹝🫐﹞𝑨𝑶𝑲𝑰𝑱𝑰』
-┆🪄 ↜الـمـطـور ↶﹝𝐅𝐋𝐀𝐒𝐇_𝐓𝐄𝐀𝐌﹞
-┆📌 ↜الـتـشـغـيـل ↶﹝${uptime}﹞
-┆🔖 ↜الــمــســتـخـدمـيـن ↶﹝${rtotalreg}﹞
-╯───────────────────⟢ـ
+*₪┆المطور: 『𝑴𝑹﹝🫐﹞𝑨𝑶𝑲𝑰𝑱𝑰』*
+*₪┆البوت: 『𝑅𝐼𝑇𝐴﹝🍇﹞𝐵𝛩𝑇』*
+*₪┆وقت التشغيل: ﹝${uptime}﹞*
+*₪┆المستخدمين: ﹝${rtotalreg}﹞*
+*◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
 > © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "Araab Zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
                     contextInfo: {
                         mentionedJid: [m.sender],
