@@ -31,7 +31,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `أهلا وسهلابك/ي👋🏻 @${mentionId.split('@')[0]}
 *₪ ↵ معلوماتك [🔰]*
 *◆━ ⊱∘┃﹝🍉﹞┃∘⊰ ━◆*
->  ₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? '👑مميز' : (isPrems ? '👶مميز👑' : 'عادي') || ''} ⌉
+>  ₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? '👑مميز' : (isPrems ? 'مميز👑' : 'عادي') || ''} ⌉
 >  ₪┆⊱∘ 🔝 مـــســـتواك↞⌊ ${level} ⌉
 >  ₪┆⊱∘ 👨‍✈️ رتـبـتـك↞⌊ ${role} ⌉
 >  ₪┆⊱∘ 🙆‍♀️ الـخـبـرة↞⌊ ${exp} ⌉
@@ -115,7 +115,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                                     id: '.ق11'
                                                 },
                                                 {
-                                                    header: 'الــق♦سم �لــحــاديــة عــشــر',
+                                                    header: 'الــقـ♦ـســم �لــحــاديــة عــشــر',
                                                     title:'استدعاء_قسم_اخرى #اخرى',
                                                     description: '',
                                                     id: '.ق10'
@@ -134,7 +134,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                      },
                      {
                name: "cta_url",
-               buttonParamsJson: '{"display_text":"⌈📲╎قـنـاة الــبــوت╎📲⌋","url":"https://whatsapp.com/channel/0029VaoUBmSKmCPIIiEatx1H","merchant_url":"https://whatsapp.com/channel/0029VaoUBmSKmCPIIiEatx1H"}'
+               buttonParamsJson: '{"display_text":"⌈📲╎قـنـاة الــبــوت╎📲⌋","url":"https://whatsapp.com/channel/0029VamEMSIB4hdaVyNiVQ0C","merchant_url":"https://whatsapp.com/channel/0029VamEMSIB4hdaVyNiVQ0C"}'
                             }
                         ]
                     }
