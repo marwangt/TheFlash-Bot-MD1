@@ -28,16 +28,16 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   const zack = 'https://qu.ax/SRQJs.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
-conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `˼⚡˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
-> ˼🪪˹↜ مــعــلــومــاتــك ↶
+conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `أهلا وسهلابك/ي👋🏻 @${mentionId.split('@')[0]}
+*₪ ↵ معلوماتك [🔰]*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
-┆⚡↜ بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
-┆⚜️↜ مـــســـتواك↞⌊ ${level} ⌉
-┆💫↜ رتـبـتـك↞⌊ ${role} ⌉
-┆🧰↜ الـخـبـرة↞⌊ ${exp} ⌉
-┆💎↜ الـمـاس↞⌊ ${limit} ⌉
+*₪┆⊱∘ 👑 بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉*
+*₪┆⊱∘ 🔝 مـــســـتواك↞⌊ ${level} ⌉*
+*₪┆⊱∘ 👨‍✈️ رتـبـتـك↞⌊ ${role} ⌉*
+*₪┆⊱∘ 🙆‍♀️ الـخـبـرة↞⌊ ${exp} ⌉*
+*₪┆⊱∘ 💎 الـمـاس↞⌊ ${limit} ⌉*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
-> ˼🤖˹↜ الــبــوت↶
+*₪ ↵ معلومات البوت [🔰]*
 *◆━ ⊱∘┃﹝🌿﹞┃∘⊰ ━◆*
 ┆⚙️ ↜اسـم الـبـوت↶﹝𝐅𝐋𝐀𝐒𝐇﹞
 ┆🪄 ↜الـمـطـور ↶﹝𝐅𝐋𝐀𝐒𝐇_𝐓𝐄𝐀𝐌﹞
